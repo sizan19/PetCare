@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashboard.fragments.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="96dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/top_bar"
+                layout="@layout/view_top_bar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp">
+
+                <!-- Greeting -->
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/pc_surface_container"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textAppearance="@style/TextAppearance.PetCare.LabelMedium"
+                    android:textColor="@color/pc_on_surface_variant"
+                    app:drawableStartCompat="@drawable/ic_wb_sunny_24"
+                    app:drawableTint="@color/pc_accent_terracotta"
+                    tools:text="Thursday, Oct 24" />
+
+                <TextView
+                    android:id="@+id/tv_greeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAppearance="@style/TextAppearance.PetCare.HeadlineMedium"
+                    android:textColor="@color/pc_primary"
+                    tools:text="Good morning, Sijan!" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                    tools:text="2 pets in your care" />
+
+                <!-- Pet filter chips -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_pets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_all"
+                            style="@style/Widget.PetCare.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/chip_all_pets" />
+                        <!-- One chip per pet is added from code -->
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <!-- Daily progress -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.PetCare.Card.Tonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:contentPadding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/daily_goal_label"
+                                android:textAllCaps="true"
+                                android:textAppearance="@style/TextAppearance.PetCare.LabelSmall"
+                                android:textColor="@color/pc_on_surface_variant" />
+
+                            <TextView
+                                android:id="@+id/tv_progress_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textAppearance="@style/TextAppearance.PetCare.HeadlineMedium"
+                                android:textColor="@color/pc_primary"
+                                tools:text="5 of 8 completed" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/daily_goal_hint"
+                                android:textAppearance="@style/TextAppearance.PetCare.BodySmall" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp">
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/progress_daily"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:indicatorColor="@color/pc_primary_container"
+                                app:indicatorSize="76dp"
+                                app:trackColor="@color/pc_secondary_container"
+                                app:trackCornerRadius="4dp"
+                                app:trackThickness="8dp"
+                                tools:progress="62" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_progress_percent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="@style/TextAppearance.PetCare.TitleMedium"
+                                    android:textColor="@color/pc_primary"
+                                    tools:text="62%" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/daily_goal_caption"
+                                    android:textAppearance="@style/TextAppearance.PetCare.LabelSmall"
+                                    android:textColor="@color/pc_on_surface_variant" />
+                            </LinearLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Shown when there is nothing to list yet -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/pc_secondary_container"
+                            android:importantForAccessibility="no"
+                            android:padding="14dp"
+                            android:src="@drawable/ic_paw_24"
+                            app:tint="@color/pc_primary_container" />
+
+                        <TextView
+                            android:id="@+id/tv_empty_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textAppearance="@style/TextAppearance.PetCare.TitleMedium"
+                            tools:text="@string/empty_no_pets_title" />
+
+                        <TextView
+                            android:id="@+id/tv_empty_body"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            tools:text="@string/empty_no_pets_body" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_empty_action"
+                            style="@style/Widget.PetCare.Button.Tonal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:icon="@drawable/ic_add_24"
+                            tools:text="@string/action_add_pet" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/section_lists"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <!-- Morning -->
+                <LinearLayout
+                    android:id="@+id/header_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_morning"
+                        android:textAppearance="@style/TextAppearance.PetCare.TitleLarge" />
+
+                    <TextView
+                        android:id="@+id/tv_morning_count"
+                        style="@style/Widget.PetCare.Badge"
+                        android:layout_marginStart="8dp"
+                        tools:text="3/3 done" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_care_task" />
+
+                <!-- Afternoon & evening -->
+                <LinearLayout
+                    android:id="@+id/header_evening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_evening"
+                        android:textAppearance="@style/TextAppearance.PetCare.TitleLarge" />
+
+                    <TextView
+                        android:id="@+id/tv_evening_count"
+                        style="@style/Widget.PetCare.Badge"
+                        android:layout_marginStart="8dp"
+                        tools:text="0/5 done" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_evening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_care_task" />
+
+                <!-- Coming up: weekly / monthly / quarterly / yearly routines that aren't due today -->
+                <LinearLayout
+                    android:id="@+id/header_upcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_upcoming"
+                        android:textAppearance="@style/TextAppearance.PetCare.TitleLarge" />
+
+                    <TextView
+                        android:id="@+id/tv_upcoming_count"
+                        style="@style/Widget.PetCare.Badge"
+                        android:layout_marginStart="8dp"
+                        tools:text="4" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_upcoming_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/section_upcoming_hint"
+                    android:textAppearance="@style/TextAppearance.PetCare.BodySmall" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_upcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_care_task" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_new_routine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="@string/action_new_routine"
+        android:textColor="@color/pc_on_primary"
+        app:backgroundTint="@color/pc_primary_container"
+        app:icon="@drawable/ic_add_24"
+        app:iconTint="@color/pc_on_primary"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.PetCare.Large" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

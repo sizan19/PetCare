@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pc_background"
+    android:fitsSystemWindows="true"
+    tools:context=".SplashActivity">
+
+    <!-- Elevated brand emblem -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_logo"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:cardBackgroundColor="@color/pc_surface_container_lowest"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="8dp"
+        app:contentPadding="0dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_brand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/cd_logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_petcare_logo" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/brand_name"
+        android:textAppearance="@style/TextAppearance.PetCare.Display"
+        app:layout_constraintBottom_toTopOf="@id/tv_tagline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_logo" />
+
+    <TextView
+        android:id="@+id/tv_tagline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/brand_tagline"
+        android:textAppearance="@style/TextAppearance.PetCare.BodyLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_brand" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/splash_loading"
+        android:indeterminate="true"
+        app:indicatorColor="@color/pc_primary_container"
+        app:indicatorSize="36dp"
+        app:trackColor="@color/pc_secondary_container"
+        app:trackCornerRadius="4dp"
+        app:trackThickness="4dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/splash_footer"
+        android:textAppearance="@style/TextAppearance.PetCare.LabelMedium"
+        android:textColor="@color/pc_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

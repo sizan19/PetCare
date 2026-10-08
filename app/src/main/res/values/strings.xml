@@ -1,0 +1,211 @@
+<resources>
+    <string name="app_name">PetCare</string>
+    <string name="label">Label</string>
+
+    <!-- Brand -->
+    <string name="brand_name">PetCare</string>
+    <string name="brand_tagline">Thoughtful daily care for your beloved companions</string>
+    <string name="brand_sanctuary_eyebrow">Family sanctuary</string>
+    <string name="brand_sanctuary_title">PetCare</string>
+    <string name="splash_loading">Loading PetCare</string>
+    <string name="splash_footer">Loading into app</string>
+    <string name="cd_logo">PetCare logo</string>
+    <string name="cd_hero">A pet owner hugging a dog and a cat</string>
+
+    <!-- Auth -->
+    <string name="login_title">Welcome back! 🐾</string>
+    <string name="login_subtitle">Sign in to manage your pets\' daily care.</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="action_create_account">Create an Account</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Start organising feeding, walks, meds and vet visits in one place.</string>
+    <string name="action_get_started">Get Started with PetCare</string>
+    <string name="creating_account">Creating account…</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="action_sign_in_link">Sign In</string>
+    <string name="legal_footer">Your pet records are synced securely with Firebase.</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="sign_out_title">Sign out?</string>
+    <string name="sign_out_message">You\'ll need to sign in again to see your pets.</string>
+
+    <!-- Common -->
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_undo">Undo</string>
+    <string name="not_set">Not set</string>
+    <string name="label_value_format">%1$s: %2$s</string>
+    <string name="error_firebase">Couldn\'t sync with Firebase: %1$s</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_today">Today</string>
+    <string name="nav_routines">Routines</string>
+    <string name="nav_pets">Pets &amp; Share</string>
+    <string name="nav_places">Places</string>
+
+    <!-- Today -->
+    <string name="greeting_morning">Good morning, %1$s!</string>
+    <string name="greeting_afternoon">Good afternoon, %1$s!</string>
+    <string name="greeting_evening">Good evening, %1$s!</string>
+    <string name="today_subtitle_no_pets">Let\'s set up your first pet.</string>
+    <plurals name="pets_in_care">
+        <item quantity="one">%d pet in your care</item>
+        <item quantity="other">%d pets in your care</item>
+    </plurals>
+    <string name="chip_all_pets">All pets</string>
+    <string name="daily_goal_label">Daily care goal</string>
+    <string name="daily_goal_progress">%1$d of %2$d completed</string>
+    <string name="daily_goal_percent">%1$d%%</string>
+    <string name="daily_goal_caption">today</string>
+    <string name="daily_goal_hint">Tick tasks off as you go. Ticks reset each day.</string>
+    <string name="section_morning">Morning routine</string>
+    <string name="section_evening">Afternoon &amp; evening</string>
+    <string name="section_done_count">%1$d/%2$d done</string>
+    <string name="section_upcoming">Coming up</string>
+    <string name="section_upcoming_hint">Weekly, monthly and yearly care. Each one moves into today\'s list on its due date.</string>
+    <string name="due_on_format">Due %1$s · %2$s</string>
+    <string name="due_tomorrow_format">Due tomorrow · %1$s</string>
+    <string name="today_nothing_due">Nothing due today</string>
+    <string name="action_new_routine">New Routine</string>
+    <string name="empty_no_pets_title">No pets yet</string>
+    <string name="empty_no_pets_body">Add your first pet, then build their daily care routine.</string>
+    <string name="empty_no_tasks_title">No routines yet</string>
+    <string name="empty_no_tasks_body">Create feeding, walk, grooming or medication routines and they\'ll show up here each day.</string>
+    <string name="unknown_pet">Pet</string>
+    <string name="cd_edit_task">Edit task</string>
+    <string name="cd_delete_task">Delete task</string>
+    <string name="cd_mark_done">Mark task done</string>
+    <string name="task_deleted">Deleted “%1$s”</string>
+    <string name="task_title_format">%1$s • %2$s</string>
+    <string name="task_meta_format">%1$s • %2$s</string>
+
+    <!-- Routine form -->
+    <string name="routine_title_create">Create routine</string>
+    <string name="routine_title_edit">Edit routine</string>
+    <string name="routine_target_pet">Target pet</string>
+    <string name="routine_no_pets">Add a pet first so the routine has someone to belong to.</string>
+    <string name="routine_task_info">Task information</string>
+    <string name="routine_task_name">Task name</string>
+    <string name="routine_task_name_hint">e.g. Heartworm chewable</string>
+    <string name="routine_category">Care category</string>
+    <string name="cat_medication">Medication</string>
+    <string name="cat_feeding">Feeding</string>
+    <string name="cat_exercise">Exercise &amp; Walk</string>
+    <string name="cat_grooming">Grooming</string>
+    <string name="cat_vet">Vet Checkup</string>
+    <string name="routine_frequency">Frequency</string>
+    <string name="routine_time">Time</string>
+    <string name="routine_start_date">Start date</string>
+    <string name="routine_supplies_section">Supplies &amp; delegation</string>
+    <string name="routine_supplies">Supplies &amp; dosage</string>
+    <string name="routine_supplies_hint">e.g. 1 chewable tablet with a snack</string>
+    <string name="routine_sitter_title">Include in pet sitter checklist</string>
+    <string name="routine_sitter_subtitle">Sent with the SMS handover on Pets &amp; Share</string>
+    <string name="routine_notes_section">Care instructions &amp; notes</string>
+    <string name="routine_notes_hint">Special meal, medicine or routine instructions…</string>
+    <string name="action_save_routine">Save Routine</string>
+    <string name="action_clear_form">Clear Form</string>
+    <string name="action_delete_routine">Delete Routine</string>
+    <string name="delete_routine_title">Delete routine?</string>
+    <string name="delete_routine_message">Are you sure you want to delete “%1$s”? This can\'t be undone.</string>
+    <string name="routine_saved">Routine “%1$s” saved</string>
+    <string name="routine_name_required">Give the task a name</string>
+    <string name="routine_cleared">Form cleared</string>
+    <string-array name="routine_frequencies">
+        <item>Daily</item>
+        <item>Twice daily (morning &amp; night)</item>
+        <item>Weekly</item>
+        <item>Bi-weekly (every 2 weeks)</item>
+        <item>Monthly</item>
+        <item>Quarterly (every 3 months)</item>
+        <item>Yearly</item>
+    </string-array>
+
+    <!-- Pets & Share -->
+    <string name="action_add_pet">Add Pet</string>
+    <string name="action_edit_pet">Edit pet</string>
+    <string name="action_delete_pet">Delete pet</string>
+    <string name="pets_empty_body">Add a pet to keep their profile, diet, allergies and vet details in one place.</string>
+    <string name="pet_form_title_add">Add pet</string>
+    <string name="pet_form_title_edit">Edit pet</string>
+    <string name="pet_name">Name</string>
+    <string name="pet_name_required">Enter your pet\'s name</string>
+    <string name="pet_species">Species</string>
+    <string name="species_dog">Dog</string>
+    <string name="species_cat">Cat</string>
+    <string name="species_other">Other</string>
+    <string name="pet_breed">Breed</string>
+    <string name="pet_age">Age</string>
+    <string name="pet_weight">Weight</string>
+    <string name="pet_microchip">Microchip ID</string>
+    <string name="pet_diet">Dietary plan</string>
+    <string name="pet_allergies">Allergies</string>
+    <string name="pet_vet">Vet</string>
+    <string name="pet_vet_name">Vet or clinic name</string>
+    <string name="pet_vet_phone">Vet phone</string>
+    <string name="pet_saved">%1$s saved</string>
+    <string name="cd_pet_photo">Pet photo</string>
+    <string name="action_choose_photo">Choose Photo</string>
+    <string name="action_change_photo">Change Photo</string>
+    <string name="action_take_photo">Camera</string>
+    <string name="action_remove_photo">Remove</string>
+    <string name="photo_read_failed">Couldn\'t read that photo. Try another one.</string>
+    <string name="no_camera_app">No camera app found on this device</string>
+    <string name="delete_pet_title">Delete %1$s?</string>
+    <string name="delete_pet_message">This removes %1$s and all of their care routines. This can\'t be undone.</string>
+    <string name="delegation_eyebrow">Item delegation</string>
+    <string name="delegation_title">Care delegation &amp; sitter handover</string>
+    <string name="delegation_body">Going away? Send %1$s\'s routines, schedules and vet contact to your sitter by SMS. They don\'t need the app.</string>
+    <string name="delegation_recipient">Recipient sitter</string>
+    <string name="hint_sitter_name">Sitter\'s name</string>
+    <string name="hint_phone">Phone number</string>
+    <string name="delegation_items">Items to include</string>
+    <string name="delegation_items_count">%1$d of %2$d selected</string>
+    <string name="delegation_preview">SMS preview</string>
+    <string name="action_send_sms">Send Routine via SMS</string>
+    <string name="action_copy_summary">Copy Summary</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="sms_nothing_selected">Pick at least one item to send</string>
+    <string name="sms_phone_required">Enter the sitter\'s phone number</string>
+    <string name="no_sms_app">No SMS app found on this device</string>
+    <string name="deleg_feeding">Daily feeding schedule</string>
+    <string name="deleg_walks">Walking &amp; exercise times</string>
+    <string name="deleg_meds">Medication reminders</string>
+    <string name="deleg_vet">Emergency vet contact</string>
+
+    <!-- Places -->
+    <string name="places_search_hint">Search tagged clinics, parks, stores…</string>
+    <plurals name="saved_places">
+        <item quantity="one">%d saved place</item>
+        <item quantity="other">%d saved places</item>
+    </plurals>
+    <string name="places_header_body">Long-press the map to tag a spot. Tap a place to find it on the map; long-press it to edit.</string>
+    <string name="cd_places_map">Map of your saved places</string>
+    <string name="place_not_on_map">This place has no map location yet. Long-press it to add an address.</string>
+    <string name="place_pinned_helper">Pinned from the map. Change the address to move the pin.</string>
+    <string name="place_address_not_found">Couldn\'t find that address on the map. The place was saved without a pin.</string>
+    <string name="places_empty">No saved places yet. Tag your vet, groomer, park or pet shop to find them fast.</string>
+    <string name="places_no_match">No places match your search.</string>
+    <string name="chip_all">All</string>
+    <string name="chip_vets">Vet Clinics</string>
+    <string name="chip_parks">Dog Parks</string>
+    <string name="chip_grooming">Grooming</string>
+    <string name="chip_supplies">Pet Supplies</string>
+    <string name="action_directions">Directions</string>
+    <string name="action_tag_place">Tag Place</string>
+    <string name="cd_delete_place">Delete place</string>
+    <string name="place_form_title_add">Tag a place</string>
+    <string name="place_form_title_edit">Edit place</string>
+    <string name="place_name">Place name</string>
+    <string name="place_name_required">Enter a name for this place</string>
+    <string name="place_category">Category</string>
+    <string name="place_address">Address</string>
+    <string name="place_address_helper">Used to find the place in your maps app</string>
+    <string name="place_notes">Notes (opening hours, phone…)</string>
+    <string name="no_maps_app">No maps app found on this device</string>
+</resources>

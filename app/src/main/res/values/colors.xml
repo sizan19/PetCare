@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- PetCare palette, from the Stitch "Organic Material Pet Care" design system -->
+    <color name="pc_primary">#FF0F563F</color>
+    <color name="pc_on_primary">#FFFFFFFF</color>
+    <color name="pc_primary_container">#FF2E6F56</color>
+    <color name="pc_on_primary_container">#FFACEFD0</color>
+    <color name="pc_inverse_primary">#FF92D4B6</color>
+
+    <color name="pc_secondary">#FF396753</color>
+    <color name="pc_on_secondary">#FFFFFFFF</color>
+    <color name="pc_secondary_container">#FFBCEED3</color>
+    <color name="pc_on_secondary_container">#FF3F6D59</color>
+
+    <color name="pc_tertiary">#FF82321D</color>
+    <color name="pc_on_tertiary">#FFFFFFFF</color>
+    <color name="pc_tertiary_container">#FFA14932</color>
+    <color name="pc_on_tertiary_container">#FFFFD8CF</color>
+    <color name="pc_tertiary_fixed">#FFFFDBD2</color>
+
+    <color name="pc_error">#FFBA1A1A</color>
+    <color name="pc_on_error">#FFFFFFFF</color>
+    <color name="pc_error_container">#FFFFDAD6</color>
+    <color name="pc_on_error_container">#FF93000A</color>
+
+    <color name="pc_background">#FFECFDF7</color>
+    <color name="pc_surface">#FFECFDF7</color>
+    <color name="pc_on_surface">#FF0F1E1B</color>
+    <color name="pc_on_surface_variant">#FF404944</color>
+    <color name="pc_surface_container_lowest">#FFFFFFFF</color>
+    <color name="pc_surface_container_low">#FFE6F8F1</color>
+    <color name="pc_surface_container">#FFE0F2EB</color>
+    <color name="pc_surface_container_high">#FFDBECE5</color>
+    <color name="pc_surface_container_highest">#FFD5E6E0</color>
+    <color name="pc_outline">#FF707973</color>
+    <color name="pc_outline_variant">#FFBFC9C2</color>
+    <color name="pc_inverse_surface">#FF24332F</color>
+    <color name="pc_inverse_on_surface">#FFE3F5EE</color>
+
+    <!-- Status badges -->
+    <color name="pc_badge_done_bg">#FFE4F1EC</color>
+    <color name="pc_badge_overdue_bg">#FFFDECE8</color>
+    <color name="pc_accent_terracotta">#FFE07A5F</color>
+    <color name="pc_border_soft">#FFD2E3DB</color>
+</resources>

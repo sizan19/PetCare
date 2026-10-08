@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circular task checkbox: sage ring when open, filled sage with a tick when done -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/pc_primary_container" />
+                    <size android:width="26dp" android:height="26dp" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_check_small_white" android:gravity="center" />
+        </layer-list>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <stroke android:width="2dp" android:color="#FF82B29A" />
+            <size android:width="26dp" android:height="26dp" />
+        </shape>
+    </item>
+</selector>

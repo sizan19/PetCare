@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Type scale, from the Stitch design tokens -->
+    <style name="TextAppearance.PetCare.Display" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@color/pc_primary</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/pc_primary</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/pc_on_surface</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/pc_on_surface</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/pc_on_surface</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/pc_on_surface</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/pc_on_surface_variant</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/pc_on_surface_variant</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/pc_on_surface_variant</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="TextAppearance.PetCare.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- Components -->
+    <style name="Widget.PetCare.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/pc_surface_container_lowest</item>
+        <item name="boxStrokeColor">@color/pc_primary_container</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="startIconTint">@color/pc_on_surface_variant</item>
+        <item name="endIconTint">@color/pc_on_surface_variant</item>
+    </style>
+
+    <!-- Primary filled pill, 56dp tall -->
+    <style name="Widget.PetCare.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="backgroundTint">@color/pc_primary_container</item>
+        <item name="android:textColor">@color/pc_on_primary</item>
+        <item name="iconTint">@color/pc_on_primary</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.TitleMedium</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PetCare.Pill</item>
+    </style>
+
+    <!-- Tonal pill: soft mint container -->
+    <style name="Widget.PetCare.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="backgroundTint">@color/pc_secondary_container</item>
+        <item name="android:textColor">@color/pc_primary</item>
+        <item name="iconTint">@color/pc_primary</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.LabelLarge</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PetCare.Pill</item>
+    </style>
+
+    <!-- Outlined pill for destructive actions -->
+    <style name="Widget.PetCare.Button.OutlinedDanger" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="strokeColor">@color/pc_error</item>
+        <item name="android:textColor">@color/pc_error</item>
+        <item name="iconTint">@color/pc_error</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.TitleSmall</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PetCare.Pill</item>
+    </style>
+
+    <style name="Widget.PetCare.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/pc_primary_container</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.TitleSmall</item>
+    </style>
+
+    <!-- White bordered card, 20dp radius -->
+    <style name="Widget.PetCare.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/pc_surface_container_lowest</item>
+        <item name="strokeColor">@color/pc_border_soft</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- Tinted card for highlights -->
+    <style name="Widget.PetCare.Card.Tonal" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/pc_surface_container_low</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <style name="Widget.PetCare.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_bg_selector</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="chipIconTint">@color/chip_text_selector</item>
+        <item name="checkedIconTint">@color/pc_on_primary</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PetCare.Pill</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.LabelLarge</item>
+    </style>
+
+    <style name="Widget.PetCare.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/pc_surface_container_low</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.PetCare.BottomNavigation.Indicator</item>
+        <item name="itemIconTint">@color/bottom_nav_item_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_item_selector</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.PetCare.LabelMedium</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.PetCare.LabelMedium</item>
+    </style>
+
+    <style name="Widget.PetCare.BottomNavigation.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/pc_secondary_container</item>
+    </style>
+
+    <!-- Small pill badge, e.g. "3/3 Done" -->
+    <style name="Widget.PetCare.Badge" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:backgroundTint">@color/pc_badge_done_bg</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.LabelSmall</item>
+        <item name="android:textColor">@color/pc_primary_container</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- Section heading with leading icon, used on the routine form -->
+    <style name="Widget.PetCare.SectionTitle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.TitleMedium</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="drawableTint">@color/pc_primary_container</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <!-- Field label above an input -->
+    <style name="Widget.PetCare.FieldLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.PetCare.LabelLarge</item>
+        <item name="android:textColor">@color/pc_on_surface_variant</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+    </style>
+
+</resources>

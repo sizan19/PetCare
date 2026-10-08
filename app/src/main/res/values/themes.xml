@@ -1,0 +1,82 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme: Material 3 with the Stitch PetCare palette (light only, as designed). -->
+    <style name="Theme.PetCare" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/pc_primary_container</item>
+        <item name="colorOnPrimary">@color/pc_on_primary</item>
+        <item name="colorPrimaryContainer">@color/pc_secondary_container</item>
+        <item name="colorOnPrimaryContainer">@color/pc_primary</item>
+        <item name="colorPrimaryInverse">@color/pc_inverse_primary</item>
+
+        <item name="colorSecondary">@color/pc_secondary</item>
+        <item name="colorOnSecondary">@color/pc_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/pc_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/pc_on_secondary_container</item>
+
+        <item name="colorTertiary">@color/pc_tertiary</item>
+        <item name="colorOnTertiary">@color/pc_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/pc_tertiary_fixed</item>
+        <item name="colorOnTertiaryContainer">@color/pc_tertiary</item>
+
+        <item name="colorError">@color/pc_error</item>
+        <item name="colorOnError">@color/pc_on_error</item>
+        <item name="colorErrorContainer">@color/pc_error_container</item>
+        <item name="colorOnErrorContainer">@color/pc_on_error_container</item>
+
+        <item name="android:colorBackground">@color/pc_background</item>
+        <item name="colorOnBackground">@color/pc_on_surface</item>
+        <item name="colorSurface">@color/pc_surface</item>
+        <item name="colorOnSurface">@color/pc_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/pc_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">@color/pc_surface_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/pc_surface_container_low</item>
+        <item name="colorSurfaceContainer">@color/pc_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/pc_surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/pc_surface_container_highest</item>
+        <item name="colorOutline">@color/pc_outline</item>
+        <item name="colorOutlineVariant">@color/pc_outline_variant</item>
+        <item name="colorSurfaceInverse">@color/pc_inverse_surface</item>
+        <item name="colorOnSurfaceInverse">@color/pc_inverse_on_surface</item>
+
+        <!-- Inter everywhere -->
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+
+        <!-- Pill-forward shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.PetCare.Pill</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.PetCare.Large</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.PetCare.ExtraLarge</item>
+
+        <item name="textInputStyle">@style/Widget.PetCare.TextInputLayout</item>
+        <item name="materialButtonStyle">@style/Widget.PetCare.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.PetCare.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.PetCare.BottomNavigation</item>
+
+        <item name="android:statusBarColor">@color/pc_background</item>
+        <item name="android:navigationBarColor">@color/pc_surface_container_low</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <!-- Launch activity: the Android 12+ system splash shows the PetCare logo on the app background,
+         so it hands off seamlessly to SplashActivity's own layout. -->
+    <style name="Theme.PetCare.Splash">
+        <item name="android:windowSplashScreenBackground">@color/pc_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_petcare_foreground</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="ShapeAppearance.PetCare.Pill" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.PetCare.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.PetCare.ExtraLarge" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+</resources>

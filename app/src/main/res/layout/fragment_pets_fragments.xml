@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="24dp"
+    tools:context=".dashboard.fragments.PetsFragments">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/view_top_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <!-- Pet switcher: one chip per pet is added from code -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_pet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true" />
+                </HorizontalScrollView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_pet"
+                    style="@style/Widget.PetCare.Button.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/action_add_pet"
+                    app:icon="@drawable/ic_add_24" />
+            </LinearLayout>
+
+            <!-- Empty state -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_circle"
+                        android:backgroundTint="@color/pc_secondary_container"
+                        android:importantForAccessibility="no"
+                        android:padding="14dp"
+                        android:src="@drawable/ic_paw_24"
+                        app:tint="@color/pc_primary_container" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/empty_no_pets_title"
+                        android:textAppearance="@style/TextAppearance.PetCare.TitleMedium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="@string/pets_empty_body"
+                        android:textAppearance="@style/TextAppearance.PetCare.BodyMedium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/content_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Pet profile -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardCornerRadius="28dp"
+                    app:contentPadding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Pet photo, or the first letter of the name when there is none -->
+                            <FrameLayout
+                                android:layout_width="72dp"
+                                android:layout_height="72dp">
+
+                                <TextView
+                                    android:id="@+id/tv_pet_avatar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bg_circle"
+                                    android:backgroundTint="@color/pc_secondary_container"
+                                    android:gravity="center"
+                                    android:importantForAccessibility="no"
+                                    android:textAppearance="@style/TextAppearance.PetCare.HeadlineLarge"
+                                    android:textColor="@color/pc_primary_container"
+                                    tools:text="B" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_pet_photo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@string/cd_pet_photo"
+                                    android:scaleType="centerCrop"
+                                    android:visibility="gone"
+                                    app:shapeAppearanceOverlay="@style/ShapeAppearance.PetCare.Pill"
+                                    app:strokeColor="@color/pc_secondary_container"
+                                    app:strokeWidth="3dp" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_pet_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="@style/TextAppearance.PetCare.HeadlineMedium"
+                                    android:textColor="@color/pc_primary"
+                                    tools:text="Bruno" />
+
+                                <TextView
+                                    android:id="@+id/tv_pet_breed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                                    tools:text="Dog · Labrador" />
+
+                                <TextView
+                                    android:id="@+id/tv_pet_stats"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:drawablePadding="4dp"
+                                    android:gravity="center_vertical"
+                                    android:textAppearance="@style/TextAppearance.PetCare.LabelMedium"
+                                    android:textColor="@color/pc_on_surface"
+                                    app:drawableStartCompat="@drawable/ic_cake_24"
+                                    app:drawableTint="@color/pc_secondary"
+                                    tools:text="3 yrs • 24 kg" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/btn_edit_pet"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="@string/action_edit_pet"
+                                android:src="@drawable/ic_edit_24"
+                                app:tint="@color/pc_on_surface_variant" />
+
+                            <ImageButton
+                                android:id="@+id/btn_delete_pet"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="@string/action_delete_pet"
+                                android:src="@drawable/ic_delete_24"
+                                app:tint="@color/pc_error" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_microchip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_rounded_16"
+                            android:backgroundTint="@color/pc_surface_container_low"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:padding="12dp"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            android:textColor="@color/pc_on_surface"
+                            app:drawableStartCompat="@drawable/ic_qr_code_2_24"
+                            app:drawableTint="@color/pc_primary_container"
+                            tools:text="Microchip ID: 985141002900" />
+
+                        <TextView
+                            android:id="@+id/tv_diet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            android:textColor="@color/pc_on_surface"
+                            app:drawableStartCompat="@drawable/ic_restaurant_24"
+                            app:drawableTint="@color/pc_primary_container"
+                            tools:text="Dietary plan: Not set" />
+
+                        <TextView
+                            android:id="@+id/tv_allergies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            android:textColor="@color/pc_on_surface"
+                            app:drawableStartCompat="@drawable/ic_favorite_24"
+                            app:drawableTint="@color/pc_accent_terracotta"
+                            tools:text="Allergies: Not set" />
+
+                        <TextView
+                            android:id="@+id/tv_vet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            android:textColor="@color/pc_on_surface"
+                            app:drawableStartCompat="@drawable/ic_local_hospital_24"
+                            app:drawableTint="@color/pc_primary_container"
+                            tools:text="Vet: Not set" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Delegation intro -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.PetCare.Card.Tonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:background="@drawable/bg_circle"
+                                android:backgroundTint="@color/pc_primary_container"
+                                android:importantForAccessibility="no"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_sms_24"
+                                app:tint="@color/pc_on_primary" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/delegation_eyebrow"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="@style/TextAppearance.PetCare.LabelSmall"
+                                    android:textColor="@color/pc_secondary" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/delegation_title"
+                                    android:textAppearance="@style/TextAppearance.PetCare.TitleMedium" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_delegation_body"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                            tools:text="@string/delegation_body" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Recipient -->
+                <TextView
+                    style="@style/Widget.PetCare.FieldLabel"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/delegation_recipient" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_sitter_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sitter_name"
+                    app:startIconDrawable="@drawable/ic_person_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_sitter_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName|textCapWords"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_sitter_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/hint_phone"
+                    app:startIconDrawable="@drawable/ic_phone_iphone_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_sitter_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Items to include -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/delegation_items"
+                        android:textAppearance="@style/TextAppearance.PetCare.TitleMedium" />
+
+                    <TextView
+                        android:id="@+id/tv_items_count"
+                        style="@style/Widget.PetCare.Badge"
+                        tools:text="4 of 4 selected" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:contentPadding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cb_feeding"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:minHeight="52dp"
+                            android:text="@string/deleg_feeding"
+                            android:textAppearance="@style/TextAppearance.PetCare.TitleSmall"
+                            app:buttonTint="@color/pc_primary_container" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cb_walks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:minHeight="52dp"
+                            android:text="@string/deleg_walks"
+                            android:textAppearance="@style/TextAppearance.PetCare.TitleSmall"
+                            app:buttonTint="@color/pc_primary_container" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cb_meds"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:minHeight="52dp"
+                            android:text="@string/deleg_meds"
+                            android:textAppearance="@style/TextAppearance.PetCare.TitleSmall"
+                            app:buttonTint="@color/pc_primary_container" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cb_vet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:minHeight="52dp"
+                            android:text="@string/deleg_vet"
+                            android:textAppearance="@style/TextAppearance.PetCare.TitleSmall"
+                            app:buttonTint="@color/pc_primary_container" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SMS preview bubble -->
+                <TextView
+                    style="@style/Widget.PetCare.FieldLabel"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/delegation_preview" />
+
+                <TextView
+                    android:id="@+id/tv_sms_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:background="@drawable/bg_rounded_16"
+                    android:backgroundTint="@color/pc_primary_container"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="14dp"
+                    android:textAppearance="@style/TextAppearance.PetCare.BodyMedium"
+                    android:textColor="@color/pc_on_primary"
+                    android:textIsSelectable="true"
+                    tools:text="Hi! Here is Bruno's PetCare routine…" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_send_sms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/action_send_sms"
+                    app:icon="@drawable/ic_send_to_mobile_24"
+                    app:iconGravity="textStart" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_copy"
+                    style="@style/Widget.PetCare.Button.Tonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/action_copy_summary"
+                    app:icon="@drawable/ic_content_copy_24"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
